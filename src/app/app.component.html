@@ -1,0 +1,41 @@
+<!-- <h1>{{ deniyoruz }}</h1> -->
+<!-- İki kıvırcık parantez içerisine dışarda tuttuğumuz veriyi yazabiliyoruz 
+Bunun içine verdiğimizi app component ts te tanımlamalıyız-->
+
+<!-- <h2 style="color: red">{{ titleArr }}</h2>
+<p>{{ 5 + 9 }}</p> -->
+<!--String interpolation otomatik olarak string return ediyor. 
+Yani 5+9 = 14 olduğunda 14ü number olarak değil "14" olarak döndürüyor.-->
+
+<!-- <img src="{{imgUrl}}" alt="">
+Yukardaki gibi vermiyoruz da aşağıdaki gibi property binding yapıyoruz
+Yukardaki şekil string interpolation.-->
+<!-- <img [src]="imgUrl" alt="" />
+
+<button disabled="{{ isDisabled }}">
+  UnDisable Using string interpolation button
+</button>
+<button [disabled]="isDisabled">UnDisable Using property binding button</button> -->
+<!-- String interpolation değil de property interpolation yapmamızın amacı 
+ oluşturduğumuz değişkenin halini kullanmak yani boolean bir değer oluşturduysak
+ string değil boolean olarak kullanmak -->
+
+<!-- <button [class.active]="isActive">Click Me</button> -->
+<!-- Yukardaki kullanım class binding class özelliklerini yerine getirip getimemesini
+ sağlıyor. -->
+
+<!-- <button [class.active]="isActive" [class.no-active]="!isActive" [class.active-border]="isActive" [class.no-active-border]="!isActive">Click Me</button>
+
+<button [class.apple]= "fruitName == 'Apple' ">Fruit Ninja</button>
+
+<button [style.background] = "isActive? 'red': 'green'">Deneme</button> -->
+<!-- Style interpolation yukardaki. isActive? eğer isActive true ise red yap,
+ else ise yani : green yap demek. -->
+ 
+<app-navbar></app-navbar>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+

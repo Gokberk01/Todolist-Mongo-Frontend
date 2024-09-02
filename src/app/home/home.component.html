@@ -1,0 +1,58 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+
+<!--Divin stylelarını verebiliriz düzenlemek için-->
+<form class="form-signin w-100 m-auto" (ngSubmit)="postTodoItem()">
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="userContext"
+    name="userContext"
+    required
+  />
+  <button class="btn btn-primary w-100 py-2" type="submit">Add Context</button>
+</form>
+
+<div>
+  <ul>
+    <li *ngFor="let todo of todolist" [class.done]="todo.istoDoDone">
+      <!-- ID = {{ todo.toDoID }} CONTENT = {{ todo.toDoContent }} ISDONE =
+      {{ todo.istoDoDone }} -->
+      <b>{{ todo.toDoContent }}</b>
+      <label>
+        <!--DONE-->
+        <button (click)="markAsDone(todo.toDoID)" class="button">
+          <i class="fa-regular fa-circle-check"></i>
+        </button>
+      </label>
+      <label>
+        <!--DELETE-->
+        <button (click)="deleteTodo(todo.toDoID)" class="button">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </label>
+
+      <!--UPDATE-->
+
+      <label class="form-space">
+        <form class="from-update" (ngSubmit)="updateToDoList(todo)">
+          <label>
+            <button type="submit" class="button">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+          </label>
+          <label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="todo.toDoContent"
+              name="userUpdateContext"
+              required
+          /></label>
+        </form>
+      </label>
+    </li>
+  </ul>
+</div>
